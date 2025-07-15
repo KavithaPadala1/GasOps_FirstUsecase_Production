@@ -1,0 +1,49 @@
+Table: CoveredTask  
+Description: Stores the list of tasks that require coverage or certification, each identified by a task number and active status.
+- CoveredTaskID (bigint)  : Unique identifier for the covered task.
+- TaskNum (varchar)  : Task number representing the standardized task code.
+- TaskDesc(varchar) : Description of the CoveredTask.
+- IsActive (bit) : Indicates whether the task is currently active (1) or inactive (0).
+
+Table: EmployeeMasterNew  
+Description: Holds master data of employees, including their identification, vendor association, and activation status.
+- EmployeeMasterID (bigint) : Unique identifier for the employee record.
+- EmpFullName (nvarchar) : Full name of the employee. 
+- IsActive (bit) : Indicates whether the employee is active (1) or inactive (0). 
+- VendorCode (nvarchar) : Code representing the vendor associated with the employee.Must perform a lookup in the 'VendorMaster' table to find the matching VendorDisplayName(eg:'CAC',J-TRACK)
+- ITSID (nvarchar) : Unique ITSID assigned to the employee.
+
+Table: EmployeeOQTask  
+Description: Records the qualification status of employees for specific covered tasks, including task expiration and qualification status.
+- EmployeeMasterID (bigint) :  References the employee who is assigned or qualified for the covered task. 
+- CoveredTaskID (bigint)  : References the specific covered task.
+- TaskExpirationDate (datetime) : Expiration date for the employee’s qualification on the covered task.*(Date range: 2022-03-12 13:16:00.000 to 2027-10-10 08:02:11.000)*
+- IsActive (bit) : Indicates whether the qualification record is active (1) or inactive (0). 
+- IsQualified (bit) :  Indicates if the employee is currently qualified (1) or unqualified (0) for the task.
+
+Table: VendorMaster 
+Description: Stores the master list of vendors with their display names and active status.
+- VendorCode (nvarchar) : Unique code identifying the vendor.
+- VendorDisplayName (nvarchar)  : display name of the VendorCode.
+
+Table: WorkActivityFunction  
+Description: Defines high-level work activity functions that categorize tasks for operations and compliance.
+- WorkActivityFunctionID (bigint) : Unique identifier for the work activity function. 
+- DisplayCode (nvarchar)  : work activity function name (e.g., "API Welder").
+
+Table: WorkActivityFunctionToCTMap
+Description: Maps work activity functions to covered tasks to establish valid relationships for compliance and task execution.  
+- WorkActivityFunctionID (bigint)  : References the related work activity function.
+- CoveredTaskID (bigint) : References the covered task that is linked to the work activity. 
+- IsActive (bit) : Indicates whether the mapping is active (1) or inactive (0). 
+- OrgID (nvarchar)  : Identifier used to determine the utility company (like Con Edison or others) for whom the work is being performed. This helps apply the correct qualification requirements based on the utility.
+- MapVersion (int)  : Represents the certification version (1-12). Certification requirements vary by OrgID, and an employee is eligible for a task if they have any one of the certification versions for the relevant OrgID.
+
+
+##Relationships
+
+- `WorkActivityFunctionToCTMap.WorkActivityFunctionID` → `WorkActivityFunction.WorkActivityFunctionID`
+- `WorkActivityFunctionToCTMap.CoveredTaskID` → `CoveredTask.CoveredTaskID`
+- `EmployeeOQTask.CoveredTaskID` → `CoveredTask.CoveredTaskID`
+- `EmployeeOQTask.EmployeeMasterID` → `EmployeeMasterNew.EmployeeMasterID`
+- `EmployeeMasterNew.VendorCode` → `VendorMaster.VendorCode`

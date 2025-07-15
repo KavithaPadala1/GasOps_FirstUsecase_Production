@@ -1,0 +1,193 @@
+User : what are the covered tasks required for work desc Install Dead Main Plastic
+SQL Query:
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Install Dead Main Plastic%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : Which covered tasks for Install Dead Main Plastic?
+SQL Query:
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Install Dead Main Plastic%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : Covered tasks for Install Dead Main Plastic
+SQL Query:
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Install Dead Main Plastic%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : can you give me tasks for service transfers
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Service Transfers%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : What are various work descriptions?
+SQL Query :
+SELECT distinct WorkDescription FROM ContractorRouteSheetWorkDescription 
+
+User : How many tickets are created by CAC on April 1?
+SQL Query :
+-- Count the number of active tickets for contractor 'CAC' on April 1st
+-- Since the year is not specified explicitly, we are assuming the current year (2025)
+SELECT COUNT(*) AS TicketCount
+FROM ContractorRouteSheetTicketDetails CRST
+INNER JOIN ContractorMaster CM ON CRST.VendorCode = CM.VenderCode
+WHERE CM.ContractorDisplayName = 'CAC'
+  AND CAST(CRST.RouteSheetDate AS DATE) = '2025-04-01'
+  AND CRST.IsActive = 1;
+
+User : What is the total number of tickets raised by CAC on April 1?
+SQL Query :
+-- Count the number of active tickets for contractor 'CAC' on April 1st
+-- Since the year is not specified explicitly, we are assuming the current year (2025)
+SELECT COUNT(*) AS TicketCount
+FROM ContractorRouteSheetTicketDetails CRST
+INNER JOIN ContractorMaster CM ON CRST.VendorCode = CM.VenderCode
+WHERE CM.ContractorDisplayName = 'CAC'
+  AND CAST(CRST.RouteSheetDate AS DATE) = '2025-04-01'
+  AND CRST.IsActive = 1;
+
+User : How many tickets were submitted by Donofrio, march 3rd ?
+SQL Query :
+-- Count the number of active tickets for contractor 'Donofrio' on march 3rd
+-- Since the year is not specified explicitly, we are assuming the current year (2025)
+SELECT COUNT(*) AS TicketCount
+FROM ContractorRouteSheetTicketDetails CRST
+INNER JOIN ContractorMaster CM ON CRST.VendorCode = CM.VenderCode
+WHERE CM.ContractorDisplayName = 'Donofrio'
+  AND CAST(CRST.RouteSheetDate AS DATE) = '2025-03-03'
+  AND CRST.IsActive = 1;
+
+User : How many times did each type of work description occur for bond on feb 3rd?
+SQL Query :
+-- Since the year is not specified explicitly, we are assuming the current year (2025)
+SELECT CRSWD.WorkDescription, COUNT(*) AS WorkDescriptionCount
+FROM ContractorRouteSheetTicketDetails CRST
+INNER JOIN ContractorMaster CM ON CRST.VendorCode = CM.VenderCode
+INNER JOIN ContractorRouteSheetWorkDescription CRSWD ON CRST.ContractorRouteSheetWorkDescriptionID = CRSWD.ContractorRouteSheetWorkDescriptionID
+WHERE CM.ContractorDisplayName = 'bond'
+  AND CAST(CRST.RouteSheetDate AS DATE) = '2025-02-03'
+  AND CRST.IsActive = 1
+GROUP BY CRSWD.WorkDescription;
+
+User : Show me all the requirements for 16 inch Electrofusion
+-- Please see the spelling and any extra spaces of WorkDescription 
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%16inch Electrofusion%' -- removed extra space
+  AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : requirements for Pressure Test Metallic
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Pressure Test Metallic%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : provide me the requirements for Excavate
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Excavate%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the TaskNum and TaskDesc 
+
+User : give me required map versions for Service Transfers
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Service Transfers%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the relevant MapVersion
+
+User : what are the required map versions for Backfill/Excavate?
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Backfill/Excavate%'
+  AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the relevant MapVersion
+
+User : give me the tickets on april 1st 2025 by cac working on Manhattan
+SQL Query :
+SELECT 
+    crstd.TicketNumber,
+    crstd.RouteSheetDate,
+    crstd.WorkLocation,
+ CASE 
+        WHEN crstd.Region = 'M' THEN 'Manhattan'
+        ELSE crstd.Region
+    END AS Region,
+    crsw.WorkDescription
+FROM ContractorRouteSheetTicketDetails crstd
+INNER JOIN ContractorMaster cm ON crstd.VendorCode = cm.VenderCode
+LEFT JOIN ContractorRouteSheetWorkDescription crsw ON crstd.ContractorRouteSheetWorkDescriptionID = crsw.ContractorRouteSheetWorkDescriptionID
+WHERE cm.ContractorDisplayName = 'CAC'
+  AND CAST(crstd.RouteSheetDate AS DATE) = '2025-04-01'
+  AND crstd.IsActive = 1
+  AND crstd.Region = 'M' 
+ORDER BY crstd.TicketNumber
+
+User : How many tickets cac working on manhattan on april 1st 2025
+SQL Query :
+SELECT COUNT(*) AS TicketCount FROM ContractorRouteSheetTicketDetails CRTD
+INNER JOIN ContractorMaster CM ON CRTD.VendorCode = CM.VenderCode WHERE CM.ContractorDisplayName = 'CAC' AND CRTD.Region = 'M' AND CAST(CRTD.RouteSheetDate AS DATE) = '2025-04-01' AND CRTD.IsActive = 1;
+
+User : give me the qualified cac employees for work desc regulator automation?
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Regulator Automation%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the qualified EmpFullName and ITSID
+
+User : show the qualified employees of donofrio for Welding - API
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Welding - API%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the qualified EmpFullName and ITSID
+
+User : give me the flagged employees of donofrio for Welding -  API
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Welding - API%' AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the qualified EmpFullName and ITSID
+
+User : can you show me the not qualified cac employees for Regulator Automation
+SQL Query :
+SELECT DISTINCT crswf.WorkActivityFunctionID
+FROM ContractorRouteSheetWorkDescription AS crswd
+JOIN ContractorRouteSheetWorkDescriptiontoWAFMap AS crswf
+  ON crswd.ContractorRouteSheetWorkDescriptionID = crswf.ContractorRouteSheetWorkDescriptionID
+WHERE crswd.WorkDescription LIKE '%Regulator Automation%'
+  AND crswf.IsActive = 1;
+After executing send these results to oamscm agent to get the qualified EmpFullName and ITSID

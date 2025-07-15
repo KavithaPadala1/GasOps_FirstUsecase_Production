@@ -1,0 +1,48 @@
+Table: ContractorMaster  
+Description: Stores the master list of contractors with their unique VenderCode and ContractorDisplayName.
+- VenderCode (nvarchar) : Unique identifier for the contractor/vendor.
+- ContractorDisplayName (nvarchar)  : display name for the contractor/VenderCode.
+
+Table: ContractorRouteSheetTicketDetails  
+Description: Stores detailed information about route sheet tickets assigned to contractors, including work orders, locations, and active status.
+- ContractorRouteSheetTicketDetailsID (bigint) : Unique identifier for the ticket detail record.
+- VendorCode (nvarchar) : References the contractor associated with the ticket (VenderCode).
+- RouteSheetDate (datetime)  : Date on which the route sheet was issued or assigned.*(Date range: 2024-04-04 to 2025-04-03)*.
+- TicketNumber (nvarchar) : Unique ticket number. 
+- WorkOrderID (bigint)  : Links to the work order that the ticket is associated with.
+- WorkLocation (nvarchar) :  Describes the location where the work is performed.
+- ContractorRouteSheetWorkDescriptionID (bigint) : Links to the description of the work assigned on the route sheet.
+- IsActive (bit)  : Indicates whether the ticket is currently active (1) or inactive (0).
+- Region (nvarchar) : Indicates the operational region associated with the work location, based on the following mapping:
+region_mapping = {
+    "X": "Bronx",
+    "M": "Manhattan",
+    "Q": "Queens",
+    "W": "Westchester"
+}
+
+Table: ContractorRouteSheetWorkDescription  
+Description: Defines the types of work activities that contractors can perform, which are linked to tickets and employee assignments.
+- ContractorRouteSheetWorkDescriptionID (bigint) : Unique identifier for the work description.
+- WorkDescription (nvarchar)  : Text description of the specific type of work (e.g., Inspection).
+
+Table: ContractorRouteSheetWorkDescriptiontoWAFMap  
+Description: Maps contractor work descriptions to Work Activity Functions (WAFs) for reporting.
+- ContractorRouteSheetWorkDescriptionID (bigint)  : References ContractorRouteSheetWorkDescription.
+- WorkActivityFunctionID (bigint)  : Links to a predefined Work Activity Function.
+- IsActive (bit)  : Indicates whether the mapping is active (1) or inactive (0).
+
+Table: ContractorRSAssignedEmployeeDetails 
+Description: Stores the relationship between contractor tickets and the employees assigned to carry out the associated work descriptions. 
+- ContractorRouteSheetTicketDetailsID (bigint) : References the ticket details the employee is assigned to. 
+- ITSID (nvarchar) : employee's unique ITSID.
+- ContractorRouteSheetWorkDescriptionID (bigint) : Specifies the work description assigned to the employee.
+- IsDeleted (bit)  : Logical delete flag.consider 0 only.
+
+
+### Relationships:
+
+- `ContractorRouteSheetTicketDetails.VendorCode` → `ContractorMaster.VenderCode`
+- `ContractorRouteSheetTicketDetails.ContractorRouteSheetTicketDetailsID` → `ContractorRSAssignedEmployeeDetails.ContractorRouteSheetTicketDetailsID`
+- `ContractorRSAssignedEmployeeDetails.ContractorRouteSheetWorkDescriptionID` → `ContractorRouteSheetWorkDescription.ContractorRouteSheetWorkDescriptionID`
+- `ContractorRouteSheetWorkDescriptiontoWAFMap.ContractorRouteSheetWorkDescriptionID` → `ContractorRouteSheetWorkDescription.ContractorRouteSheetWorkDescriptionID`

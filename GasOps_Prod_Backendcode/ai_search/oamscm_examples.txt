@@ -1,0 +1,698 @@
+User : what are the covered tasks required for work desc Install Dead Main Plastic
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (2550,2567,2569,2570,2571,2573,2592,2593,2613,2614,2615,2616,2618,2619,2620,2641,2642,2646)
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : Which covered tasks for Install Dead Main Plastic?
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (2550,2567,2569,2570,2571,2573,2592,2593,2613,2614,2615,2616,2618,2619,2620,2641,2642,2646)
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : Covered tasks for Install Dead Main Plastic
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (2550,2567,2569,2570,2571,2573,2592,2593,2613,2614,2615,2616,2618,2619,2620,2641,2642,2646)
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : can you give me tasks for service transfers
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (
+    490, 2502, 2506, 2509, 2512, 2517, 2520, 2521, 2523, 2529, 2532, 2550, 2567, 2569, 2570, 2571, 2572, 
+2573, 2575, 2576, 2577, 2581, 2583, 2584, 2591, 2592, 2593, 2596, 2597, 2598, 2599, 2600, 2613, 2614, 
+2615, 2616, 2618, 2619, 2620, 2621, 2625, 2641, 2642, 2644, 2646, 2662
+  )
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : Show me all the requirements for 16 inch Electrofusion
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (
+   2601,2614,2641
+  )
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : requirements for Pressure Test Metallic
+SQl Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (
+  2506,2509,2520,2521,2529,2532,2567,2569,2570,2571,2573,2592,2593,2596,2597,2598,2599,2600,2641,2642,2646,2662
+  )
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : provide me the requirements for Excavate
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the TaskNum and TaskDesc
+  SELECT DISTINCT ct.TaskNum, ct.TaskDesc
+FROM WorkActivityFunctionToCTMap wafct
+JOIN CoveredTask ct
+    ON wafct.CoveredTaskID = ct.CoveredTaskID
+WHERE wafct.WorkActivityFunctionID IN (
+2641,2642
+  )
+  AND wafct.IsActive = 1
+  AND wafct.OrgID = 'CEDEMO';
+
+User : give me required map versions for Service Transfers
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find their MapVersion
+SELECT distinct MapVersion FROM WorkActivityFunctionToCTMap WHERE WorkActivityFunctionID in (
+  490, 2502, 2506, 2509, 2512, 2517, 2520, 2521, 2523, 2529, 2532, 2550, 2567, 2569, 2570, 2571, 2572, 2573, 2575, 2576, 2577, 2581, 2583, 2584, 2591, 2592, 2593, 2596, 2597, 2598, 2599, 2600, 2613, 2614, 2615, 2616, 2618, 2619, 2620, 2621, 2625, 2641, 2642, 2644, 2646, 2662
+  )
+  AND IsActive = 1
+  AND OrgID = 'CEDEMO';
+
+User : what are the required map versions for Backfill/Excavate?
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find their MapVersion
+SELECT distinct MapVersion FROM WorkActivityFunctionToCTMap WHERE WorkActivityFunctionID in (
+2641,2642  )
+   AND IsActive = 1
+  AND OrgID = 'CEDEMO';
+
+User : Show me the covered tasks that include CE31B
+SQL Query :
+SELECT TaskNum, TaskDesc FROM CoveredTask WHERE IsActive =1 and TaskDesc LIKE '%CE31B%'
+
+User : all tasks contains NGA-CT-23/24
+Here user is asking the TaskNum and TaskDesc that contains NGA-CT-23/24 in TaskDesc
+SQL Query :
+SELECT TaskNum, TaskDesc FROM CoveredTask WHERE IsActive =1 and TaskDesc LIKE  '%NGA-CT-23/24%'
+
+User : give me the qualified cac employees for work desc regulator automation?
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the qualified EmpFullName and ITSID
+-- Qualified CAC employees for Workdesc Regulator Automation
+-- Step 1: Get the VendorCode for CAC
+WITH CACVendor AS (
+    SELECT VendorCode
+    FROM VendorMaster
+    WHERE VendorDisplayName = 'CAC' AND IsActive = 1
+),
+-- Step 2: Get all required CoveredTasks per WorkActivityFunctionID and MapVersion
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (2641, 2642)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+-- Step 3: Get all active CAC employees qualified for these CoveredTasks
+QualifiedEmployeeTasks AS (
+    SELECT 
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM EmployeeOQTask EOT
+    JOIN EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    JOIN CACVendor ON EMN.VendorCode = CACVendor.VendorCode
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+),
+-- Step 4: Ensure each employee is qualified for ALL required CoveredTasks in at least ONE MapVersion
+QualifiedEmployees AS (
+    SELECT 
+        QET.EmpFullName,
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.EmpFullName, QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+)
+-- Final Output: Distinct qualified CAC employees for the given WorkActivityFunctionIDs
+SELECT DISTINCT EmpFullName, ITSID
+FROM QualifiedEmployees
+ORDER BY EmpFullName;
+
+User : show the qualified employees of donofrio for Welding - API
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the qualified EmpFullName and ITSID
+-- Step 1: Get the VendorCode for donofrio
+WITH CACVendor AS (
+    SELECT VendorCode
+    FROM VendorMaster
+    WHERE VendorDisplayName = 'donofrio' AND IsActive = 1
+),
+-- Step 2: Get all required CoveredTasks per WorkActivityFunctionID and MapVersion
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (2654)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+-- Step 3: Get all active donofrio employees qualified for these CoveredTasks
+QualifiedEmployeeTasks AS (
+    SELECT 
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM EmployeeOQTask EOT
+    JOIN EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    JOIN CACVendor ON EMN.VendorCode = CACVendor.VendorCode
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+),
+-- Step 4: Ensure each employee is qualified for ALL required CoveredTasks in at least ONE MapVersion
+QualifiedEmployees AS (
+    SELECT 
+        QET.EmpFullName,
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.EmpFullName, QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+)
+-- Final Output: Distinct qualified donofrio employees for the given WorkActivityFunctionIDs
+SELECT DISTINCT EmpFullName, ITSID
+FROM QualifiedEmployees
+ORDER BY EmpFullName;
+
+User :give me the flagged employees of donofrio for Welding -  API
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the not qualified or flagged EmpFullName and ITSID
+-- Step 1: Get the VendorCode for donofrio
+WITH DonofrioVendor AS (
+    SELECT VendorCode
+    FROM VendorMaster
+    WHERE VendorDisplayName = 'donofrio' AND IsActive = 1
+),
+-- Step 2: Get all required CoveredTasks per WorkActivityFunctionID and MapVersion
+RequiredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (2654)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+-- Step 3: Get all active donofrio employees for these CoveredTasks
+DonofrioEmployees AS (
+    SELECT EmployeeMasterID, EmpFullName, ITSID
+    FROM EmployeeMasterNew
+    WHERE VendorCode IN (SELECT VendorCode FROM DonofrioVendor)
+      AND IsActive = 1
+      AND ISNULL(ITSID, '') <> ''
+),
+-- Step 4: Tasks attempted but disqualified or expired
+DisqualifiedTasks AS (
+    SELECT
+        E.EmployeeMasterID,
+        E.EmpFullName,
+        E.ITSID,
+        R.WorkActivityFunctionID,
+        R.MapVersion,
+        R.CoveredTaskID,
+        CT.TaskNum,
+        CT.TaskDesc,
+        CASE 
+            WHEN EOT.IsQualified != 1 THEN 'Not Qualified'
+            WHEN EOT.TaskExpirationDate IS NOT NULL AND EOT.TaskExpirationDate < CAST(GETDATE() AS DATE) THEN 'Expired'
+        END AS Reason
+    FROM DonofrioEmployees E
+    JOIN EmployeeOQTask EOT ON E.EmployeeMasterID = EOT.EmployeeMasterID
+    JOIN RequiredTasks R ON EOT.CoveredTaskID = R.CoveredTaskID
+    JOIN CoveredTask CT ON R.CoveredTaskID = CT.CoveredTaskID
+    WHERE R.WorkActivityFunctionID IN (2654)
+      AND (
+           EOT.IsQualified != 1
+        OR (EOT.TaskExpirationDate IS NOT NULL AND EOT.TaskExpirationDate < CAST(GETDATE() AS DATE))
+      )
+),
+-- Step 5: Tasks completely missing
+MissingTasks AS (
+    SELECT
+        E.EmployeeMasterID,
+        E.EmpFullName,
+        E.ITSID,
+        RT.WorkActivityFunctionID,
+        RT.MapVersion,
+        RT.CoveredTaskID,
+        CT.TaskNum,
+        CT.TaskDesc,
+        'Missing Task' AS Reason
+    FROM DonofrioEmployees E
+    CROSS JOIN (SELECT DISTINCT WorkActivityFunctionID, MapVersion, CoveredTaskID FROM RequiredTasks) RT
+    LEFT JOIN EmployeeOQTask EOT
+        ON E.EmployeeMasterID = EOT.EmployeeMasterID
+       AND RT.CoveredTaskID = EOT.CoveredTaskID
+       AND EOT.IsQualified = 1
+       AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+    JOIN CoveredTask CT ON RT.CoveredTaskID = CT.CoveredTaskID
+    WHERE EOT.CoveredTaskID IS NULL
+)
+-- Final output
+SELECT DISTINCT
+    EmpFullName,
+    ITSID,
+    TaskNum,
+    TaskDesc,
+    Reason
+FROM (
+    SELECT EmpFullName, ITSID, TaskNum, TaskDesc, Reason FROM DisqualifiedTasks
+    UNION
+    SELECT EmpFullName, ITSID, TaskNum, TaskDesc, Reason FROM MissingTasks
+) AS NotQualified
+ORDER BY EmpFullName, TaskNum;
+
+User : can you show me the not qualified cac employees for Regulator Automation
+SQL Query :
+You would have received the WorkActivityFunctionID from cedemo agent use those values here to find the not qualified or flagged EmpFullName and ITSID
+WITH DonofrioVendor AS (
+    SELECT VendorCode
+    FROM VendorMaster
+    WHERE VendorDisplayName = 'cac' AND IsActive = 1
+),
+RequiredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (2641,2642)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+DonofrioEmployees AS (
+    SELECT EmployeeMasterID, EmpFullName, ITSID
+    FROM EmployeeMasterNew
+    WHERE VendorCode IN (SELECT VendorCode FROM DonofrioVendor)
+      AND IsActive = 1
+      AND ISNULL(ITSID, '') <> ''
+),
+DisqualifiedTasks AS (
+    SELECT
+        E.EmployeeMasterID,
+        E.EmpFullName,
+        E.ITSID,
+        R.WorkActivityFunctionID,
+        R.MapVersion,
+        R.CoveredTaskID,
+        CT.TaskNum,
+        CT.TaskDesc,
+        CASE
+            WHEN EOT.IsQualified != 1 THEN 'Not Qualified'
+            WHEN EOT.TaskExpirationDate IS NOT NULL AND EOT.TaskExpirationDate < CAST(GETDATE() AS DATE) THEN 'Expired'
+        END AS Reason
+    FROM DonofrioEmployees E
+    JOIN EmployeeOQTask EOT ON E.EmployeeMasterID = EOT.EmployeeMasterID
+    JOIN RequiredTasks R ON EOT.CoveredTaskID = R.CoveredTaskID
+    JOIN CoveredTask CT ON R.CoveredTaskID = CT.CoveredTaskID
+    WHERE R.WorkActivityFunctionID IN (2641,2642)
+      AND (
+           EOT.IsQualified != 1
+        OR (EOT.TaskExpirationDate IS NOT NULL AND EOT.TaskExpirationDate < CAST(GETDATE() AS DATE))
+      )
+),
+MissingTasks AS (
+    SELECT
+        E.EmployeeMasterID,
+        E.EmpFullName,
+        E.ITSID,
+        RT.WorkActivityFunctionID,
+        RT.MapVersion,
+        RT.CoveredTaskID,
+        CT.TaskNum,
+        CT.TaskDesc,
+        'Missing Task' AS Reason
+    FROM DonofrioEmployees E
+    CROSS JOIN (SELECT DISTINCT WorkActivityFunctionID, MapVersion, CoveredTaskID FROM RequiredTasks) RT
+    LEFT JOIN EmployeeOQTask EOT
+        ON E.EmployeeMasterID = EOT.EmployeeMasterID
+       AND RT.CoveredTaskID = EOT.CoveredTaskID
+       AND EOT.IsQualified = 1
+       AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+    JOIN CoveredTask CT ON RT.CoveredTaskID = CT.CoveredTaskID
+    WHERE EOT.CoveredTaskID IS NULL
+)
+SELECT DISTINCT
+    EmpFullName,
+    ITSID,
+    TaskNum,
+    TaskDesc,
+    Reason
+FROM (
+    SELECT EmpFullName, ITSID, TaskNum, TaskDesc, Reason FROM DisqualifiedTasks
+    UNION
+    SELECT EmpFullName, ITSID, TaskNum, TaskDesc, Reason FROM MissingTasks
+) AS NotQualified
+ORDER BY EmpFullName, TaskNum;
+
+User : are there any tickets where not a single person qualified for Donofrio On April 1st 2025?
+SQL Query:
+WITH WorkActivityITSIDs AS (
+    SELECT DISTINCT
+        crst.ContractorRouteSheetTicketDetailsID,
+        crst.TicketNumber,
+        wdesc.WorkDescription,
+        m.WorkActivityFunctionID,
+        itsd.ITSID
+    FROM CEDEMONEW0314.dbo.ContractorRSAssignedEmployeeDetails itsd
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetTicketDetails crst
+        ON itsd.ContractorRouteSheetTicketDetailsID = crst.ContractorRouteSheetTicketDetailsID
+    JOIN CEDEMONEW0314.dbo.ContractorMaster cm
+        ON cm.VenderCode = crst.VendorCode
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescriptiontoWAFMap m
+        ON m.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescription wdesc
+        ON wdesc.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    WHERE cm.ContractorDisplayName = 'Donofrio' -- change the ContractorDisplayName based on the user question eg, 'CAC'
+      AND crst.IsActive = 1
+      AND crst.RouteSheetDate = '2025-04-01'  -- change the RouteSheetDate based on the user question
+      AND itsd.IsDeleted = 0
+      AND m.IsActive = 1
+),
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM OAMSCM.dbo.WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (SELECT DISTINCT WorkActivityFunctionID FROM WorkActivityITSIDs)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+QualifiedEmployeeTasks AS (
+    SELECT
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM OAMSCM.dbo.EmployeeOQTask EOT
+    JOIN OAMSCM.dbo.EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+      AND EMN.ITSID IN (SELECT ITSID FROM WorkActivityITSIDs)
+),
+QualifiedEmployees AS (
+    SELECT
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+),
+TicketsWithQualifiedCount AS (
+    SELECT
+        w.ContractorRouteSheetTicketDetailsID,
+        w.TicketNumber,
+        w.WorkDescription,
+        COUNT(DISTINCT qe.ITSID) AS QualifiedCount
+    FROM WorkActivityITSIDs w
+    LEFT JOIN QualifiedEmployees qe
+        ON w.ITSID = qe.ITSID
+        AND w.WorkActivityFunctionID = qe.WorkActivityFunctionID
+    GROUP BY w.ContractorRouteSheetTicketDetailsID, w.TicketNumber, w.WorkDescription
+)
+SELECT
+    TicketNumber,
+    WorkDescription
+FROM TicketsWithQualifiedCount
+WHERE QualifiedCount = 0
+ORDER BY TicketNumber;
+
+User : Which tickets had qualified assigned people for Donofrio on April 1 2025?
+SQL Query :
+WITH WorkActivityITSIDs AS (
+    SELECT DISTINCT
+        crst.ContractorRouteSheetTicketDetailsID,
+        crst.TicketNumber,
+        wdesc.WorkDescription,
+        m.WorkActivityFunctionID,
+        itsd.ITSID
+    FROM CEDEMONEW0314.dbo.ContractorRSAssignedEmployeeDetails itsd
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetTicketDetails crst 
+        ON itsd.ContractorRouteSheetTicketDetailsID = crst.ContractorRouteSheetTicketDetailsID
+    JOIN CEDEMONEW0314.dbo.ContractorMaster cm 
+        ON cm.VenderCode = crst.VendorCode
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescriptiontoWAFMap m
+        ON m.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescription wdesc
+        ON wdesc.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    WHERE cm.ContractorDisplayName = 'Donofrio' -- change the ContractorDisplayName based on the user question eg, 'CAC'
+      AND crst.IsActive = 1
+      AND crst.RouteSheetDate = '2025-04-01' -- change the RouteSheetDate based on the user question
+      AND itsd.IsDeleted = 0
+      AND m.IsActive = 1
+),
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM OAMSCM.dbo.WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (SELECT DISTINCT WorkActivityFunctionID FROM WorkActivityITSIDs)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+QualifiedEmployeeTasks AS (
+    SELECT 
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM OAMSCM.dbo.EmployeeOQTask EOT
+    JOIN OAMSCM.dbo.EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+      AND EMN.ITSID IN (SELECT ITSID FROM WorkActivityITSIDs)
+),
+QualifiedEmployees AS (
+    SELECT 
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+)
+-- Always display these columns
+SELECT 
+    w.TicketNumber,
+    w.WorkDescription,
+    w.ITSID,
+    'Qualified' AS QualificationStatus
+FROM WorkActivityITSIDs w
+LEFT JOIN QualifiedEmployees qe
+    ON w.ITSID = qe.ITSID 
+    AND w.WorkActivityFunctionID = qe.WorkActivityFunctionID
+ORDER BY w.TicketNumber, w.ITSID;
+
+User : are there are any tickets on april 1st 2025 in the Bronx that do have at least one qualified person?
+SQL Query :
+WITH WorkActivityITSIDs AS (
+    SELECT DISTINCT
+        crst.ContractorRouteSheetTicketDetailsID,
+        crst.TicketNumber,
+        wdesc.WorkDescription,
+        m.WorkActivityFunctionID,
+        itsd.ITSID
+    FROM CEDEMONEW0314.dbo.ContractorRSAssignedEmployeeDetails itsd
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetTicketDetails crst 
+        ON itsd.ContractorRouteSheetTicketDetailsID = crst.ContractorRouteSheetTicketDetailsID
+    JOIN CEDEMONEW0314.dbo.ContractorMaster cm 
+        ON cm.VenderCode = crst.VendorCode
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescriptiontoWAFMap m
+        ON m.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescription wdesc
+        ON wdesc.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    WHERE  crst.IsActive = 1
+      AND crst.RouteSheetDate = '2025-04-01' -- change the RouteSheetDate based on the user question
+      AND crst.Region = 'X' --  change the Region based on the user question "X": "Bronx","M": "Manhattan","Q": "Queens","W": "Westchester"
+      AND itsd.IsDeleted = 0
+      AND m.IsActive = 1
+),
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM OAMSCM.dbo.WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (SELECT DISTINCT WorkActivityFunctionID FROM WorkActivityITSIDs)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+QualifiedEmployeeTasks AS (
+    SELECT 
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM OAMSCM.dbo.EmployeeOQTask EOT
+    JOIN OAMSCM.dbo.EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+      AND EMN.ITSID IN (SELECT ITSID FROM WorkActivityITSIDs)
+),
+QualifiedEmployees AS (
+    SELECT 
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+)
+-- Always display these columns
+SELECT 
+    w.TicketNumber,
+    w.WorkDescription,
+    w.ITSID,
+    'Qualified' AS QualificationStatus
+FROM WorkActivityITSIDs w
+JOIN QualifiedEmployees qe
+    ON w.ITSID = qe.ITSID 
+    AND w.WorkActivityFunctionID = qe.WorkActivityFunctionID
+ORDER BY w.TicketNumber, w.ITSID;
+
+User : are there any tickets april 1st that do not have at least one qualified person
+SQL Query :
+WITH WorkActivityITSIDs AS (
+    SELECT DISTINCT
+        crst.ContractorRouteSheetTicketDetailsID,
+        crst.TicketNumber,
+        wdesc.WorkDescription,
+        m.WorkActivityFunctionID,
+        itsd.ITSID
+    FROM CEDEMONEW0314.dbo.ContractorRSAssignedEmployeeDetails itsd
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetTicketDetails crst
+        ON itsd.ContractorRouteSheetTicketDetailsID = crst.ContractorRouteSheetTicketDetailsID
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescriptiontoWAFMap m
+        ON m.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    JOIN CEDEMONEW0314.dbo.ContractorRouteSheetWorkDescription wdesc
+        ON wdesc.ContractorRouteSheetWorkDescriptionID = itsd.ContractorRouteSheetWorkDescriptionID
+    WHERE crst.IsActive = 1
+      AND crst.RouteSheetDate = '2025-04-01'
+      AND itsd.IsDeleted = 0
+      AND m.IsActive = 1
+),
+QualifiedCoveredTasks AS (
+    SELECT WorkActivityFunctionID, MapVersion, CoveredTaskID
+    FROM OAMSCM.dbo.WorkActivityFunctionToCTMap
+    WHERE WorkActivityFunctionID IN (SELECT DISTINCT WorkActivityFunctionID FROM WorkActivityITSIDs)
+      AND IsActive = 1
+      AND OrgID = 'CEDEMO'
+),
+QualifiedEmployeeTasks AS (
+    SELECT
+        EMN.EmployeeMasterID,
+        EMN.EmpFullName,
+        EMN.ITSID,
+        EOT.CoveredTaskID,
+        QCT.MapVersion,
+        QCT.WorkActivityFunctionID
+    FROM OAMSCM.dbo.EmployeeOQTask EOT
+    JOIN OAMSCM.dbo.EmployeeMasterNew EMN ON EOT.EmployeeMasterID = EMN.EmployeeMasterID
+    JOIN QualifiedCoveredTasks QCT ON EOT.CoveredTaskID = QCT.CoveredTaskID
+    WHERE EMN.IsActive = 1
+      AND ISNULL(EMN.ITSID, '') <> ''
+      AND EOT.IsQualified = 1
+      AND (EOT.TaskExpirationDate IS NULL OR EOT.TaskExpirationDate >= CAST(GETDATE() AS DATE))
+      AND EMN.ITSID IN (SELECT ITSID FROM WorkActivityITSIDs)
+),
+QualifiedEmployees AS (
+    SELECT
+        QET.ITSID,
+        QET.WorkActivityFunctionID,
+        QET.MapVersion
+    FROM QualifiedEmployeeTasks QET
+    GROUP BY QET.ITSID, QET.WorkActivityFunctionID, QET.MapVersion
+    HAVING COUNT(DISTINCT QET.CoveredTaskID) = (
+        SELECT COUNT(DISTINCT QCT.CoveredTaskID)
+        FROM QualifiedCoveredTasks QCT
+        WHERE QCT.WorkActivityFunctionID = QET.WorkActivityFunctionID
+          AND QCT.MapVersion = QET.MapVersion
+    )
+),
+TicketsWithQualifiedCount AS (
+    SELECT
+        w.ContractorRouteSheetTicketDetailsID,
+        w.TicketNumber,
+        w.WorkDescription,
+        COUNT(DISTINCT qe.ITSID) AS QualifiedCount
+    FROM WorkActivityITSIDs w
+    LEFT JOIN QualifiedEmployees qe
+        ON w.ITSID = qe.ITSID
+        AND w.WorkActivityFunctionID = qe.WorkActivityFunctionID
+    GROUP BY w.ContractorRouteSheetTicketDetailsID, w.TicketNumber, w.WorkDescription
+)
+SELECT
+    TicketNumber,
+    WorkDescription
+FROM TicketsWithQualifiedCount
+WHERE QualifiedCount = 0
+ORDER BY TicketNumber;
